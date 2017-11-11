@@ -54,8 +54,11 @@ defmodule Algos do
     {:error, "Must be an integer >=0, provided -1"}
 
   """
-  def fib(0), do: {:ok, 0}
-  def fib(1), do: {:ok, 1}
-  def fib(n) when is_integer(n) and n >= 2, do: {:ok, fib!(n-1) + fib!(n-2)}
+  def fib(n) when is_integer(n) and n >= 0, do: {:ok, _fib(n)}
   def fib(n), do: {:error, "Must be an integer >=0, provided #{Kernel.inspect(n)}"}
+  defp _fib(0), do: 0
+  defp _fib(1), do: 1
+  defp _fib(n), do: _fib(n-1) + _fib(n-2)
+
+
 end
