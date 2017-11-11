@@ -4,7 +4,7 @@ defmodule AlgosTest do
 
   test "fib less than 0 isn't valid" do
     catch_error do
-      Algos.fib(-1)
+      Algos.fib!(-1)
     end
   end
 
