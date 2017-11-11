@@ -24,8 +24,11 @@ defmodule Algos do
     iex> Algos.fib(5)
     5
 
+    iex> Algos.fib(-1)
+    0
+
   """
-  def fib(0), do: 0
+  def fib(n) when n <= 0, do: 0
   def fib(1), do: 1
   def fib(n), do: fib(n-1) + fib(n-2)
 
